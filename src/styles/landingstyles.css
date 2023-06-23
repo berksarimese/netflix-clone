@@ -1,0 +1,433 @@
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+.landing-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 86px;
+    font-family: Poppins;
+    font-weight: 400;
+    width: calc(83.3333% - 96px);
+    gap: 25px;
+    z-index: 100;
+}
+
+.landing-navbar .logo {
+    width: 148px;
+    height: 40px;
+}
+
+.landing-navbar .select-box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    box-sizing: border-box;
+    fill: white;
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    border-radius: 5px;
+    min-width: 122px;
+    height: 32px;
+}
+
+.landing-navbar select {
+    font-size: 0.95rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    font-weight: 400;
+    background: none;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.landing-navbar select option {
+    font-family: Helvetica;
+}
+
+.landing-navbar .select-box .global-icon {
+   position: absolute;
+   font-size: 1.3rem;
+   left: 10px;
+}
+
+.landing-navbar .select-box .arrow-icon {
+   position: absolute;
+   font-size: 0.8rem;
+   right: 10px;
+}
+
+.landing-navbar .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background: #e50914; 
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-width: 77px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    transition-duration: 300ms;
+}
+
+.landing-navbar .button:hover {
+    background: #c1111a; 
+    transition-duration: 300ms;
+}
+
+
+
+.hero {
+    display: flex;
+    min-height: 43.75rem;
+    background-position: center;
+    bacground-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 9.875rem 0 4rem;
+}
+
+.hero .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .image-container .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-transform: scale(1.25) translateY(-10%);
+    -moz-transform: scale(1.25) translateY(-10%);
+    -ms-transform: scale(1.25) translateY(-10%);
+    transform: scale(1.25) translateY(-10%);
+}
+
+.hero .image-container .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0 0 0 / 40%);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    width: 100%;
+    height: 700px;
+    
+}
+
+.hero .hero-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    margin: auto;
+    z-index : 1;
+}
+
+.hero .hero-box .hero-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align:center;
+}
+
+.hero .hero-box .hero-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align:center;
+}
+
+.hero .hero-box button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background: #e50914; 
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-width: 191px;
+    height: 56px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    transition-duration: 300ms;
+}
+
+.hero .hero-box button:hover {
+    background: #c1111a; 
+    transition-duration: 300ms;
+}
+
+.card {
+    display: flex;
+    height: 553px;
+    overflow: hidden;
+    padding: 4.5rem 0;
+    background: black;
+}
+
+.card .card-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    margin: auto;
+    z-index : 1;
+    max-width: calc( 83.33333333333334% - 6rem );
+}
+
+.card .card-bar {
+    position: absolute;
+    display: flex;
+    top:0;
+    min-width: 100%;
+    height: 0.5rem;
+    background: rgb(35,35,35);
+}
+
+.card .card-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card .card-column .video1{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 75%;
+    max-height: 54%;
+    top: 21%;
+    left: 12%;
+}
+
+.card .card-column .video-box{
+    z-index: -1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    max-width: 63%;
+    max-height: 47%;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.card .card-title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.card .card-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.card .card-box .status-box {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateX(-50%);
+    width: 55%;
+    min-width: 15rem;
+    left: 50%;
+    bottom: 8%;
+    margin: 0 auto;
+    padding: 0.5rem 0.75rem;
+    z-index: 2;
+    background: rgba(0, 0, 0, 1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 2em 0 rgba(0, 0, 0, 1);
+    border-radius: 0.75rem;
+}
+
+.card .card-box .status-box .poster {
+    height: 4.5rem;
+    margin: 0 1rem 0 0;
+}
+
+.card .card-box .status-box .text-box {
+    width: 100%;
+    text-align: left;
+    margin: 0.3rem 0;
+}
+
+.card .card-box .status-box .download-gif {
+    height: 3rem;
+    
+}
+
+.card .card-box .status-box .status-title {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Roboto;
+}
+
+.card .card-box .status-box .status-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 0.8;
+    color: #0071eb;
+    font-family: Roboto;
+}
+
+@media (max-width:1278px) {
+    .landing-navbar {
+        width: calc(100% - 4rem);
+    }
+
+    .card .card-box {
+         max-width: calc(100% - 4rem);
+    }
+
+    .card .card-box .status-box {
+        width: 70%;
+    }
+
+}
+
+@media (max-width:958px) {
+    .landing-navbar {
+        gap: 8px;  
+    }
+
+    .landing-navbar .logo {
+        width: 89px;
+        height: 24px;
+    }
+
+    .hero {
+        min-height: 32rem;
+        padding: 8.5rem 0 3rem;
+    }
+
+    .hero .hero-box .hero-title {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    
+    .hero .hero-box .hero-text {
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+    
+    .hero .hero-box .hero-text-2 {
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    .card {
+        height: 35%;
+    }
+
+
+    .card .card-box {
+        flex-direction: column;
+        max-width: calc(100% - 4rem);
+    }
+
+    .card .card-column {
+        flex-direction: column;
+        max-width: calc(100%);  
+        text-align: center;
+    }
+
+    .card .column-mini {
+        max-width: 100%;
+    }
+    
+    .card .card-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .card .card-text {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+
+    .order1 {
+        order: 1;
+    }
+
+    .order2 {
+        order: 2;
+    }
+
+    .card .card-box .status-box .poster {
+        height: 4rem;
+    }
+    
+
+}
+
+@media (max-width:598px) {
+    .hero .hero-box {
+        max-width: calc(100% - 3rem);
+    }
+
+    .getstart-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero .hero-box button {
+        min-width: 153px;
+        height: 48px;
+        margin-top: 1.5rem;
+        margin-left: 0px !important;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .landing-navbar .select-box {
+        min-width: 60px;
+    }
+
+    .landing-navbar select {
+        width: 100%;
+        color: black;
+    }
+
+    .card .card-box .status-box .poster {
+        height: 3rem;
+    }
+
+    .card .card-box .status-box .status-title {
+        font-size: 0.9rem;
+    }
+    
+    .card .card-box .status-box .status-text {
+        font-size: 0.775rem;
+    }
+    
+}

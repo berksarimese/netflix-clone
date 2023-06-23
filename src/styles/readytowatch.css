@@ -1,0 +1,110 @@
+.readytowatch-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1.5rem 0 0;
+    color: white;
+}
+
+.readytowatch-form .rtw-text {
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align:center;
+}
+
+.readytowatch-form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 386px;
+    height: 56px;
+    background: rgba(22, 22, 22, 0.7);
+    border: 1px solid  rgba(128, 128, 128, 0.7);
+    border-radius: 0.25rem;
+}
+
+.readytowatch-form input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 1.5rem 1rem 0.5rem;
+    z-index: 2;
+}
+
+.readytowatch-form label {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Roboto;
+    top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    left: 1rem;
+    transition-duration: 200ms;
+}
+
+.readytowatch-form .email-error {
+    position: absolute;
+    display: none;
+    align-items: center;
+    top: 60px;
+    left:0;
+    color: #eb3942;
+    font-size: 0.9rem;
+}
+
+.getstart-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.readytowatch-form .email-error {
+    font-size: 0.8rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background: #e50914; 
+    color: white;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-weight: 500;
+    min-width: 191px;
+    height: 56px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    transition-duration: 300ms;
+}
+
+button:hover {
+    background: #c1111a; 
+    transition-duration: 300ms;
+}
+
+
+@media (max-width: 1278px) {
+
+}
+
+@media (max-width: 958px) {
+
+}
+
+@media (max-width: 598px) {
+
+    .getstart-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+  
