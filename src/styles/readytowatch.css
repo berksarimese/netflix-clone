@@ -57,7 +57,7 @@
     font-size: 0.9rem;
 }
 
-.getstart-container {
+.readytowatch-form .getstart-container {
     display: flex;
     flex-direction: row;
 }
@@ -66,14 +66,13 @@
     font-size: 0.8rem;
 }
 
-button {
+.readytowatch-form button {
     display: flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
     background: #e50914; 
     color: white;
-    font-family: Roboto;
     font-size: 1.5rem;
     font-weight: 500;
     min-width: 191px;
@@ -84,7 +83,7 @@ button {
     transition-duration: 300ms;
 }
 
-button:hover {
+.readytowatch-form button:hover {
     background: #c1111a; 
     transition-duration: 300ms;
 }
@@ -100,10 +99,19 @@ button:hover {
 
 @media (max-width: 598px) {
 
-    .getstart-container {
+    .readytowatch-form .getstart-container {
         flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+
+    .readytowatch-form button {
+        min-width: 153px;
+        height: 48px;
+        margin-top: 1.5rem;
+        margin-left: 0px !important;
+        font-size: 1.125rem;
+        font-weight: 600;
     }
 
 }

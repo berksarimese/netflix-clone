@@ -20,53 +20,6 @@ a {
     height: 40px;
 }
 
-.landing-navbar .select-box {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    color: white;
-    box-sizing: border-box;
-    fill: white;
-    border: 1px solid rgba(255, 255, 255, 0.40);
-    border-radius: 5px;
-    min-width: 122px;
-    height: 32px;
-}
-
-.landing-navbar select {
-    font-size: 0.95rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-    font-weight: 400;
-    background: none;
-    color: white;
-    border: none;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.landing-navbar select option {
-    font-family: Helvetica;
-}
-
-.landing-navbar .select-box .global-icon {
-   position: absolute;
-   font-size: 1.3rem;
-   left: 10px;
-}
-
-.landing-navbar .select-box .arrow-icon {
-   position: absolute;
-   font-size: 0.8rem;
-   right: 10px;
-}
-
 .landing-navbar .button {
     display: flex;
     justify-content: center;
@@ -407,15 +360,6 @@ a {
         margin-left: 0px !important;
         font-size: 1.125rem;
         font-weight: 600;
-    }
-
-    .landing-navbar .select-box {
-        min-width: 60px;
-    }
-
-    .landing-navbar select {
-        width: 100%;
-        color: black;
     }
 
     .card .card-box .status-box .poster {

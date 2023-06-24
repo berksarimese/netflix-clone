@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/landingstyles.css';
 import logo from '../media/logo.png'
-import { VscGlobe, VscTriangleDown } from "react-icons/vsc";
+import Language from './Language';
 
 const NavbarLanding = () => {
   return (
@@ -10,14 +10,7 @@ const NavbarLanding = () => {
             <div className='d-flex w-100'>
                 <img src={logo} alt="logo" className='logo' />
             </div>
-            <div className='select-box'>
-                <VscGlobe className='global-icon'/>
-                <select name="cars" id="cars">
-                    <option value="english">English</option>
-                    <option value="turkce">Türkçe</option>
-                </select>
-                <VscTriangleDown className='arrow-icon' />
-            </div>
+            <Language />
             <a href='/' className='button'>Sign In</a>
             
         </div>
