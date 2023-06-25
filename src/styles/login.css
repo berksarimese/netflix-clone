@@ -1,0 +1,297 @@
+.signin-container .signin {
+    display: flex;
+    min-height: 100%;
+    background-position: center;
+    bacground-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.signin .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.signin-container .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 90px;
+    z-index: 10;
+    background: linear-gradient(180deg,rgba(0,0,0,.5) 0,transparent);
+}
+
+.signin-container .header .logo {
+    margin-left: 3%;
+    height: 45px;
+}
+
+.signin .image-container .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-transform: scale(1.25) translateY(-10%);
+    -moz-transform: scale(1.25) translateY(-10%);
+    -ms-transform: scale(1.25) translateY(-10%);
+    transform: scale(1.25) translateY(-10%);
+}
+
+.signin .image-container .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity:0.5;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.signin .signin-box {
+    background-color: transparent;
+    margin: 0 auto -236px;
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    color: white;
+    margin: auto;
+    z-index : 1;
+}
+
+.signin .signin-box::before {
+    content: "";
+    display: block;
+    height: 91px;
+}
+
+.signin .form-container {
+    min-height: 660px;
+    margin-bottom: 90px;
+    padding: 60px 68px 40px;
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 380px;
+    width: 100%;
+}
+
+.signin .signin-form {
+  flex-grow: 1;
+}
+
+.signin .signin-form .signin-title {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.signin .signin-form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background:rgb(51, 51, 51);;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.signin .signin-form input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    height:50px;
+    outline: none;
+    padding: 1.5rem 1rem 0.5rem;
+    z-index: 2;
+}
+
+.signin .signin-form .input-text {
+    position: absolute;
+    color: #8c8c8c;
+    font-family: Roboto;
+    top: 50%;
+    font-size: 1rem;
+    font-weight: 400;
+    left: 20px;
+    transform: translateY(-50%);
+    transition-duration: 100ms;
+}
+
+.signin .signin-form .email-error {
+    display: none;
+    align-items: center;
+    padding-left: 3px;
+    color: #e87c03;
+    font-family: Roboto;
+    font-size: 13px;
+    text-width: 600;
+    line-height: 1.2;
+}
+
+.signin .signin-box button {
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background: #e50914; 
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 24px 0 12px;
+    line-height: 1;
+}
+
+.signin .login-box button:hover {
+    background: #c1111a; 
+    transition-duration: 300ms;
+}
+
+.signin .signin-box .check-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;  
+}
+
+.signin .signin-box .link {
+    color: #b3b3b3;
+    line-height: 1.5;
+    font-size: 13px;
+    font-family: Roboto;
+    user-select: none;
+    text-decoration: none;
+}
+
+.signin .signin-box .link:hover {
+    text-decoration: underline;
+}
+
+.signin .signin-box .bottom-text {
+    color: #858585;
+    line-height: 1.1;
+    font-size: 13px;
+    font-family: Roboto;
+    user-select: none;
+    text-decoration: none;
+}
+
+.cbox-contain *,
+.cbox-contain *::before,
+.cbox-contain *::after {
+  box-sizing: content-box !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cbox-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.cbox-contain span {
+    color: #b3b3b3;
+    line-height: 1.5;
+    font-size: 13px;
+    font-family: Roboto;
+    user-select: none;
+  
+}
+
+.cbox-contain {
+  display: table;
+  position: relative;
+  padding-left: 1.25rem;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+
+.cbox-contain input[type="checkbox"] ~ .cbox-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  background: #737373;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.1rem;
+}
+
+.cbox-contain input[type="checkbox"] ~ .cbox-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 1px;
+  width: 0.3rem;
+  height: 0.6rem;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 3px 3px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+.cbox-contain input[type="checkbox"]:disabled ~ .cbox-input::after {
+  border-color: #ffffff;
+}
+
+.cbox-contain input:checked ~ .cbox-input::after {
+  display: block;
+}
+
+.cbox-contain:hover input[type="checkbox"]:not([disabled]) ~ .cbox-input,
+.cbox-contain input[type="checkbox"]:focus ~ .cbox-input {
+  background: #737373;
+  border-color: #737373;
+}
+
+.cbox-contain input[type="checkbox"]:checked ~ .cbox-input {
+  background: #737373;
+  border-color: #737373;
+}
+
+.cbox-contain input[type="checkbox"]:disabled ~ .cbox-input{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cbox-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .cbox-input,
+.cbox-contain input[type="checkbox"]:checked:focus ~ .cbox-input {
+  background: #737373;
+  border-color: #737373;
+}
+
+
+@media (max-width: 1278px) {
+
+}
+  
+@media (max-width: 958px) {
+
+}
+
+@media (max-width: 598px) {
+
+}
