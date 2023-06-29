@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import loginimage from '../media/heroimage.jpg'
 import logo from '../media/logo.png'
-import '../styles/login.css'
+import '../styles/signin.css'
 import '../styles/fonts.css'
+import Language from '../components/Language'
 
 type signinEmail = {
     isFocussed: boolean,
@@ -59,10 +60,10 @@ const Login = () => {
     <div className='d-flex flex-column w-100 signin-container' style={{background: '#000'}}>
 
         <div className='header'>
-            <img src={logo} alt="logo" className='logo' />
+            <a href='#' className='logo'><img src={logo} alt="logo" className='logo' /></a>
         </div>
 
-        <div className='position-relative signin'>
+        <div className='position-relative d-flex flex-column signin'>
             <div className='signin-box'>
 
                 <div className='form-container'>
@@ -80,7 +81,7 @@ const Login = () => {
                         </div>
                         <div className='email-error' style={emailEmpty ? labelStyle.emailError : {}}>Please enter a valid email or phone number.</div>
 
-                        <div className='input-box' style={(passwordEmpty ? labelStyle.emailError : {}, {marginTop: '16px', marginBottom: '32px'})}>
+                        <div className='input-box' style={(passwordEmpty ? labelStyle.emailError : {}, {marginTop: '16px'})}>
                             <input type="email" value={passwordFocus.inputValue} 
                                 style={(passwordEmpty ? labelStyle.isMailEmpty : {})}
                                 onFocus={() => setPasswordFocus({...passwordFocus,isFocussed: true})} 
@@ -107,11 +108,33 @@ const Login = () => {
                 </div>               
             </div>
 
+            <div className='footer-container'>
+                <div className='footer'>
+                    <div className='footer-head'>Questions? Call <a href='tel:0850-000-0000' className='link2' style={{fontSize:'inherit'}}>0850-390-7444</a></div>
+                    <div className='list-container'>
+                        <ul className='list'>
+                            <li className='list-item'><a href='#' className='link2'>FAQ</a></li>
+                            <li className='list-item'><a href='#' className='link2'>Help Center</a></li>
+                            <li className='list-item'><a href='#' className='link2'>Terms of Use</a></li>
+                            <li className='list-item'><a href='#' className='link2'>Privacy</a></li>
+                            <li className='list-item'><a href='#' className='link2'>Cookie Preferences</a></li>
+                            <li className='list-item'><a href='#' className='link2'>Corporate Information</a></li>
+                        </ul>
+                    </div>
+                    <div style={{marginTop: '20px'}}>
+                        <Language />
+                    </div>
+                    
+                </div>
+            </div>
+
             <div className='image-container'>
                 <img src={loginimage} alt="login" className='image' />
                 <div className='shadow'></div>
             </div>
         </div>
+
+
     </div>
   )
 }

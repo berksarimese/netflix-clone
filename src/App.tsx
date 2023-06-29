@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Landingpage from './pages/Landingpage';
-import Login from './pages/Login';
+import Signin from './pages/Signin';
+import Browse from './pages/Browse';
 
 function App() {
   return (
     <div className='d-flex'>
-      <Login />
+      <Browse />
     </div>
   );
 }

@@ -34,13 +34,7 @@
 }
 
 .signin .image-container .image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    -webkit-transform: scale(1.25) translateY(-10%);
-    -moz-transform: scale(1.25) translateY(-10%);
-    -ms-transform: scale(1.25) translateY(-10%);
-    transform: scale(1.25) translateY(-10%);
+    min-height: 100%;
 }
 
 .signin .image-container .shadow {
@@ -195,6 +189,71 @@
     text-decoration: none;
 }
 
+.signin .footer-container {
+  background: rgba(0,0,0,.75);
+  z-index : 1;
+}
+
+.signin .footer{
+  color: #757575;
+  font-size: 1em;
+  min-width: 190px;
+  padding-bottom: 20px;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 30px 0;
+}
+
+.signin .footer .footer-head {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: Segoe UI;
+  margin: 0 0 30px;
+  padding: 0;  
+}
+
+.signin .footer .list-container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+}
+
+.signin .footer .list {
+  --grid-column-count: 4;
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc( (100% - var(--total-gap-width)) / var(--grid-column-count) );
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr) );
+  grid-gap: var(--grid-layout-gap);
+  box-sizing: border-box;
+  list-style-type: none;
+  line-height: 1.3125rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  --grid-layout-gap: 0.75rem;
+  --grid-item--min-width: 6.375rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.signin .footer .link2 {
+  color: #737373;
+  font-family: Helvetica;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.signin .footer .link2:hover {
+  text-decoration: underline;
+}
+
+
 .cbox-contain *,
 .cbox-contain *::before,
 .cbox-contain *::after {
@@ -283,13 +342,36 @@
   border-color: #737373;
 }
 
-
-@media (max-width: 1278px) {
-
-}
   
-@media (max-width: 958px) {
+@media (max-width: 738px) {
+  .signin .signin-box {
+    background-color: transparent;
+    margin: 0 auto -236px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    color: white;
+    z-index : 1;
+}
 
+.signin .form-container {
+  min-height: 660px;
+  margin-bottom: 90px;
+  padding: 100px 5% 40px;
+  background-color: rgba(0,0,0,.75);
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+  width: 100%;
+}
+
+.signin .signin-box::before {
+    content: "";
+    display: block;
+    height: 0px;
+}
 }
 
 @media (max-width: 598px) {

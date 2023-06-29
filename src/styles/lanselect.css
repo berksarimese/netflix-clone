@@ -11,6 +11,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    z-index: 2;
 }
 
 .language-select-box select option {
@@ -44,6 +45,29 @@
     font-size: 0.8rem;
     right: 10px;
  }
+
+ .signin .language-select-box select {
+    font-size: 13px;
+    color: #737373;
+    z-index: 2;
+}
+
+.signin .language-select-box select option {
+    font-size: 13px;
+    background:black;
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    
+}
+
+ .signin .language-select-box {
+    width: 122px;
+    height: 48px;
+    color: #737373;  
+}
  
 
  @media (max-width: 1278px) {
