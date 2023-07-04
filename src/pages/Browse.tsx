@@ -1,8 +1,11 @@
 import React from 'react'
+import NavbarBrowse from '../components/NavbarBrowse'
 
 const Browse = () => {
   return (
-    <div>Browse</div>
+    <div>
+      <NavbarBrowse />
+    </div>
   )
 }
 

@@ -1,0 +1,164 @@
+.browse-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 4%;
+    background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+    transition-duration: 0.4s;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    z-index: 2;
+}
+
+.browse-navbar .navbar-container .logo {
+    height: 25px;
+    width: 92px;
+    margin-right: 25px;
+    user-select: none;
+}
+
+.browse-navbar .navbar-container .navbar-navigation {
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+.browse-navbar .navbar-container .navbar-navigation .navigation-item {
+    margin-left: 20px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    user-select: none;
+}
+
+.browse-navbar .navbar-container .navbar-navigation .navigation-item:hover {
+    color: #b3b3b3;
+    transition: 0.4s;
+}
+
+.browse-navbar .navbar-container .navbar-second-navigation {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    user-select: none;
+}
+
+.browse-navbar .navbar-container .navbar-second-navigation .navigation-item {
+    margin-left: 0px;
+    margin-right: 15px;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+}
+
+.browse-navbar .navbar-container .navbar-navigation-list {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+    white-space: nowrap;
+}
+
+.browse-navbar .navbar-container .navbar-navigation-list .navigation-item {
+    margin-left: 20px;
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    user-select: none;
+}
+
+.browse-navbar .navbar-container .browse-sub-menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    top: 60px;
+    left: 0px;
+}
+
+.browse-navbar .navbar-container .browse-sub-menu .navigation-item {
+    margin-left: 20px;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #b3b3b3;;
+    user-select: none;
+    background-color: rgba(20,20,20,90%);
+    padding: 15px 80px;
+    transition-duration: 0.4s;
+}
+
+.browse-navbar .navbar-container .browse-sub-menu .navigation-item:hover {
+    background-color: rgba(20,20,20,70%); 
+    transition-duration: 0.4s;
+}
+
+.arrow-display {
+    display: flex;
+}
+
+@media (max-width: 1200px) {
+
+    .browse-navbar .navbar-container .navbar-navigation .navigation-item {
+        margin-left: 18px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .browse-navbar .navbar-container .logo {
+        margin-right: 5px;
+    }
+
+}
+
+@media (max-width: 958px) {
+ 
+    .navbar-container {
+        height: 41px; 
+    }
+
+    .browse-navbar .navbar-container .logo {
+        height: 17px;
+        width: 64px;
+    }
+
+    .browse-navbar .navbar-container .navbar-navigation .navigation-item {
+        font-size: 10px;
+    }
+
+    .arrow-display {
+        display: none;
+    }
+}
+
+@media (max-width: 886px) {
+ 
+    .browse-navbar .navbar-container .navbar-navigation {
+        display: none;
+    }
+
+}
+
+@media (max-width: 598px) {
+
+
+}
+

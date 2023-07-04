@@ -60,7 +60,7 @@ const Login = () => {
     <div className='d-flex flex-column w-100 signin-container' style={{background: '#000'}}>
 
         <div className='header'>
-            <a href='#' className='logo'><img src={logo} alt="logo" className='logo' /></a>
+            <a href='#/' className='logo'><img src={logo} alt="logo" className='logo' /></a>
         </div>
 
         <div className='position-relative d-flex flex-column signin'>
@@ -113,12 +113,12 @@ const Login = () => {
                     <div className='footer-head'>Questions? Call <a href='tel:0850-000-0000' className='link2' style={{fontSize:'inherit'}}>0850-390-7444</a></div>
                     <div className='list-container'>
                         <ul className='list'>
-                            <li className='list-item'><a href='#' className='link2'>FAQ</a></li>
-                            <li className='list-item'><a href='#' className='link2'>Help Center</a></li>
-                            <li className='list-item'><a href='#' className='link2'>Terms of Use</a></li>
-                            <li className='list-item'><a href='#' className='link2'>Privacy</a></li>
-                            <li className='list-item'><a href='#' className='link2'>Cookie Preferences</a></li>
-                            <li className='list-item'><a href='#' className='link2'>Corporate Information</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>FAQ</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>Help Center</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>Terms of Use</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>Privacy</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>Cookie Preferences</a></li>
+                            <li className='list-item'><a href='#/' className='link2'>Corporate Information</a></li>
                         </ul>
                     </div>
                     <div style={{marginTop: '20px'}}>

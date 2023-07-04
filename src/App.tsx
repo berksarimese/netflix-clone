@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Landingpage from './pages/Landingpage';
-import Signin from './pages/Signin';
+// import Landingpage from './pages/Landingpage';
+// import Signin from './pages/Signin';
 import Browse from './pages/Browse';
 
 function App() {
