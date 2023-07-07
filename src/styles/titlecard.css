@@ -3,18 +3,18 @@ html {
 }
 
 
-.title-main {
+.card-main {
     position: absolute;
     box-sizing: border-box;
     font-family: Roboto;
     margin: 3vw 0;
     padding: 0;
-    z-index: 100;
+    z-index: 1;
     width: 100%;
-    height: 100%;
 }
 
-.title-main .header .title {
+.card-main .head .title {
+    position: relative;
     color: #e5e5e5;
     display: inline-block;
     font-size: 1.35vw;
@@ -25,58 +25,127 @@ html {
     font-family: Poppins;
 }
 
-
-
-
-
-
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 100%);
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-.wrapper section {
-    width: 100%;
+.card-main .card-slide {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    margin: 20px 0;
+    overflow: visible;
 }
-.wrapper section .item {
-    padding: 0 2px;
-    transition: 250ms all;
+
+.card-main .card-slide .slider {
+    position: relative;
+    margin: 0;
+    padding: 0 4%;
+    position: relative;
+    touch-action: pan-y;
 }
-.wrapper section .item:hover {
-    margin: 0 40px;
-    transform: scale(1.2);
-}
-.wrapper section a {
-    position: absolute;
+
+.card-main .card-slide .slider .previous-button {
+    background: hsla(0,0%,8%,.5);
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    left: -2px;
+    cursor: pointer;
+    bottom: 0;
     color: #fff;
-    text-decoration: none;
-    font-size: 6em;
-    background: #000;
-    width: 80px;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
     text-align: center;
-    z-index: 1;
-}
-.wrapper section a:nth-of-type(1) {
     top: 0;
+    width: 4%;
+    z-index: 20;
+    align-items: center;
+    font-size: 3vw;
+}
+
+.card-main .card-slide .slider .previous-button:hover {
+    background: hsla(0,0%,8%,.75);
+    font-size: 4vw;
+    transition-duration: 0.1s;
+}
+
+.card-main .card-slide .slider .next-button {
+    background: hsla(0,0%,8%,.5);
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    right: 0;
+    cursor: pointer;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 4%;
+    z-index: 20;
+    align-items: center;
+    font-size: 3vw;
+}
+
+.card-main .card-slide .slider .next-button:hover {
+    background: hsla(0,0%,8%,.75);
+    font-size: 4vw;
+    transition-duration: 0.1s;
+
+}
+
+.card-main .card-slide .slider .slider-row {
+    position: relative;
+    display: flex;
+    left: 0;
+    flex-direction: row;
+    overflow: visible;
+    transition-duration: 0.4s;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper {
+    min-width: 16.66666667%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 .2vw;
+    position: relative;
+    vertical-align: top;
+    white-space: normal;
+    z-index: 1;
+    position: relative;
+    border-radius: .2vw;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper img {
+    cursor: pointer;
     bottom: 0;
     left: 0;
-    background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-}
-.wrapper section a:nth-of-type(2) {
-    top: 0;
-    bottom: 0;
     right: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    top: 0;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    aspect-ratio: 16/9;
 }
-@media only screen and (max-width: 600px) {
-    a.arrow__btn {
-        display: none;
-   }
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover{
+    display: flex;
+    transition-duration: 0.4s;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 0;
+    padding: 0 .2vw;
+    border-radius: 5px;  
+    width: 100%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 16/9;
+    overflow: visible;
+    transition-duration: 0.4s;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image .info{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: red;
 }
