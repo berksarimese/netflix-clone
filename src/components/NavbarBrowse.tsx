@@ -5,6 +5,7 @@ import logo from '../media/logo.png'
 import profileimage from '../media/profileimage.png'
 import notifyimage from '../media/notifyimg.png'
 import { TbSearch, TbBell, TbPlayerPlayFilled, TbUser, TbHelp, TbPencil, TbTransferIn } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 const NavbarBrowse = () => {
 
@@ -87,7 +88,7 @@ const NavbarBrowse = () => {
         <div className='browse-navbar' style={navDark ? navbarDarkStyle.background : {}}>
           <div className='navbar-container'>
             <div className='d-flex flex-row align-items-center'> 
-              <a href='#/' className='d-flex' style={{alignItems:'center'}}><img src={logo} alt="logo" className='logo' /></a>
+              <Link to='/' className='d-flex' style={{alignItems:'center'}}><img src={logo} alt="logo" className='logo' /></Link>
               <div className='navbar-navigation'>
                 <a href="#/" className='navigation-item'>Home</a>
                 <a href="#/" className='navigation-item'>TV Shows</a>

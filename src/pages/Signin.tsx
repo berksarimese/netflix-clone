@@ -4,6 +4,7 @@ import logo from '../media/logo.png'
 import '../styles/signin.css'
 import '../styles/fonts.css'
 import Language from '../components/Language'
+import { Link } from 'react-router-dom'
 
 type signinEmail = {
     isFocussed: boolean,
@@ -90,7 +91,7 @@ const Login = () => {
                             <div className='input-text' style={passwordFocus.isFocussed ? labelStyle.labelMove : {}}>Password</div>
                         </div>
                         <div className='email-error' style={passwordEmpty ? labelStyle.emailError : {}}>Your password must contain between 4 and 60 characters.</div>
-                        <button>Sign In</button>
+                        <Link to='/browse'><button>Sign In</button></Link> 
                         <div className='check-box'>
                         <label className="cbox-contain">
                             <span>Remember Me</span>

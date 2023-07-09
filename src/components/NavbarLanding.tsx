@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/landingstyles.css';
 import logo from '../media/logo.png'
 import Language from './Language';
+import { Link } from 'react-router-dom';
 
 const NavbarLanding = () => {
   return (
@@ -11,7 +12,7 @@ const NavbarLanding = () => {
                 <img src={logo} alt="logo" className='logo' />
             </div>
             <Language />
-            <a href='/' className='button'>Sign In</a>
+            <Link to='/signin' className='button'>Sign In</Link>
             
         </div>
     </div>
