@@ -1,10 +1,9 @@
 .card-main {
-    position: absolute;
+    position: relative;
     box-sizing: border-box;
     font-family: Roboto;
     margin: 3vw 0;
     padding: 0;
-    z-index: 1;
     width: 100%;
     font-size: 1vw;
 }
@@ -48,7 +47,7 @@
     text-align: center;
     top: 0;
     width: 4%;
-    z-index: 20;
+    z-index: 10;
     align-items: center;
     font-size: 3vw;
     margin-top: -1px;
@@ -74,7 +73,7 @@
     text-align: center;
     top: 0;
     width: 4%;
-    z-index: 20;
+    z-index: 10;
     align-items: center;
     font-size: 3vw;
     margin-top: -1px;
@@ -97,15 +96,13 @@
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper {
+    position: relative;
     min-width: 16.66666667%;
     box-sizing: border-box;
     display: inline-block;
     padding: 0 .2vw;
-    position: relative;
     vertical-align: top;
     white-space: normal;
-    z-index: 1;
-    position: relative;
     border-radius: .2vw;
 }
 
@@ -122,8 +119,19 @@
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper .card-hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
+  
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-true{
+    z-index: 5;
+    top: -100px;
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image {
@@ -131,19 +139,130 @@
     top: 50%;
     left: 50%;
     border: 0;
-    padding: 0 .2vw;
-    border-radius: 5px;  
+    padding: 0 .2vw; 
     width: 100%;
-    z-index: 4;
     transform: translate(-50%, -50%);
     aspect-ratio: 16/9;
     overflow: visible;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image img {
+    border-radius: 5px 5px 0px 0px; 
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-true { 
+    width: 150%;
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image .info{
-    display: block;
-    width: 100%;
-    height: 0px;
-    background-color: red;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    background-color: #181818;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+    padding: 20px 20px;
+    transition-duration: 0.2s;
+    opacity: 0;
+    
 }
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image .info .movie-title{
+    position: relative;
+    display: flex;
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2vw;
+    padding: 0;
+    margin-top: .8vw;
+    height: 100%;
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image .info-true {
+    display: flex;
+    opacity: 1;
+    transition-duration: 0.2s;
+    z-index: 6;
+}
+
+.card-hover .hover-image .info .button-box{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.card-hover .hover-image .info .button-box .button-item{
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    border: 2px solid hsla(0,0%,100%,.5);
+    border-radius: 25px;
+    padding: 5px;
+    min-width: 2.7vw;
+    height: 2.7vw;
+    outline: none;
+    background: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+}
+
+.card-hover .hover-image .info .button-box .button-item:hover{
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.card-hover .hover-image .info .show-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    font-family: Roboto;
+    margin-top: .3vw;
+    gap: 0.5vw;
+    white-space: nowrap;
+}
+
+.card-hover .hover-image .info .show-info .match {
+    color: #43CA65;
+    font-weight: 700;
+    font-size: 1.2vw;
+}
+
+.card-hover .hover-image .info .show-info .episode {
+    color: lightgray;
+    font-size: 1.1vw;
+}
+
+.card-hover .hover-image .info .show-info .hd {
+    color: white;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 2px;
+    padding: 1px 5px;
+    font-size: .6vw;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.card-hover .hover-image .info .genres {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5vw;
+    margin-top: .5vw;
+}
+
+.card-hover .hover-image .info .genres div {
+    color: white;
+    font-family: Poppins;
+    font-weight: 500;
+}
+

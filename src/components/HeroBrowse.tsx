@@ -1,20 +1,46 @@
-import React from 'react'
+import { useEffect,useState } from 'react'
 import '../styles/browsehero.css';
 import '../styles/fonts.css';
-import cobrahero from '../media/cobrahero.jpg'
-import cobralogo from '../media/cobralogo.png'
-import { TbPlayerPlayFilled, TbInfoCircle, TbReload } from "react-icons/tb";
+import { TbPlayerPlayFilled, TbInfoCircle } from "react-icons/tb";
+import { useSelector } from 'react-redux';
+import { AppState } from '../store';
+
+
+type List = {
+    id: number;
+    title: string,
+    description: string;
+    image: string;
+    date: string;
+    media_type: string,
+    genre: any,
+    hover: boolean;
+}
 
 const HeroBrowse = () => {
     
-const cobrakai = {
-    heroimage:cobrahero,
-    logo:cobralogo,
-    title: "It's Official: Another Season Is Coming",
-    desc:'Decades after the torunament that changed their lives, the rivalry between Johnny and Daniel reignites in this sequel to the Karate Kid films.',
-    adult: true
-}
+    //RANDOM NUMBER
+    const [randomNumber, setRandomNumber] = useState<number>(0);
+    useEffect(() => {
+        const rndm = getRandomNumber();
+        setRandomNumber(rndm);
+        console.log(randomNumber);
+    }, []);
 
+    const getRandomNumber = () => {
+        const min = 0;
+        const max = 17;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+    
+
+    //RANDOM SHOW
+    const[movieList, setMovieList] = useState<List[]>([]);
+    const trendShowData = useSelector((state: AppState) => state.trendMovies);
+
+    useEffect(() => {
+        setMovieList(trendShowData.data);
+    }, [trendShowData])
 
   return (
     <>
@@ -24,12 +50,15 @@ const cobrakai = {
                 <div className="hero-container">
                     <div className="hero-info">
                         <div className="logo-text">
-                            <img src={cobrakai.logo} alt="billboardlogo" />
+                            <div className="fake-logo">
+                            {(movieList.length > 0 ? movieList[randomNumber].title: '')}
+                            </div>
+                            {/* <img src={cobrakai.logo} alt="billboardlogo" /> */}
                             <div  className='title'>
-                                {cobrakai.title}
+                               {/* {(movieList.length > 0 ? movieList[randomNumber].title: '')} */}
                             </div>
                             <div className='desc'>
-                                {cobrakai.desc}
+                            {(movieList.length > 0 ? movieList[randomNumber].description: '')}
                             </div>
                         </div>
                         <div className="button-layer">
@@ -39,7 +68,7 @@ const cobrakai = {
                     </div>
                 </div>
                 <div className="hero-image">
-                    <img src={cobrakai.heroimage} alt="heroimage" />
+                    <img src={(movieList.length > 0 ? `https://image.tmdb.org/t/p/w1280${movieList[randomNumber].image}` : '')} alt="heroimage" />
                     <div className="image-shadow"></div>
                     <div className="hero-shadow"></div>
                 </div>
