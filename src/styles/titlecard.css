@@ -50,7 +50,7 @@
     z-index: 10;
     align-items: center;
     font-size: 3vw;
-    margin-top: -1px;
+    margin-top: -2px;
 }
 
 .card-main .card-slide .slider .previous-button:hover {
@@ -76,7 +76,7 @@
     z-index: 10;
     align-items: center;
     font-size: 3vw;
-    margin-top: -1px;
+    margin-top: -2px;
 }
 
 .card-main .card-slide .slider .next-button:hover {
@@ -104,6 +104,7 @@
     vertical-align: top;
     white-space: normal;
     border-radius: .2vw;
+    height: 100%;
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper img {
@@ -130,9 +131,10 @@
 }
 
 .card-main .card-slide .slider .slider-row .card-wrapper .card-true{
-    z-index: 5;
+    z-index: 20;
     top: -100px;
 }
+
 
 .card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image {
     position: absolute;
@@ -155,6 +157,14 @@
     width: 150%;
 }
 
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .card-left-true { 
+    transform: translate(-35%, -50%);
+}
+
+.card-main .card-slide .slider .slider-row .card-wrapper .card-hover .card-right-true { 
+    transform: translate(-65%, -50%);
+}
+
 .card-main .card-slide .slider .slider-row .card-wrapper .card-hover .hover-image .info{
     position: absolute;
     display: flex;
@@ -174,7 +184,7 @@
     width: 100%;
     color: white;
     font-weight: 600;
-    font-size: 1.2vw;
+    font-size: 18px;
     padding: 0;
     margin-top: .8vw;
     height: 100%;
@@ -201,12 +211,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4vw;
+    font-size: 1.8vw;
     border: 2px solid hsla(0,0%,100%,.5);
     border-radius: 25px;
-    padding: 5px;
-    min-width: 2.7vw;
-    height: 2.7vw;
+    padding: 7px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 42px;
+    max-height: 42px;
     outline: none;
     background: rgba(255, 255, 255, 0);
     white-space: nowrap;
@@ -227,18 +239,18 @@
     font-family: Roboto;
     margin-top: .3vw;
     gap: 0.5vw;
-    white-space: nowrap;
+    
 }
 
 .card-hover .hover-image .info .show-info .match {
     color: #43CA65;
     font-weight: 700;
-    font-size: 1.2vw;
+    font-size: 16px;
 }
 
 .card-hover .hover-image .info .show-info .episode {
     color: lightgray;
-    font-size: 1.1vw;
+    font-size: 15px;
 }
 
 .card-hover .hover-image .info .show-info .hd {
@@ -246,7 +258,7 @@
     border: 1px solid rgb(227, 227, 227);
     border-radius: 2px;
     padding: 1px 5px;
-    font-size: .6vw;
+    font-size: 9px;
     font-family: Poppins;
     font-weight: 500;
 }
@@ -256,8 +268,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: .5vw;
-    margin-top: .5vw;
+    font-size: 14px;
+    gap: 5px;
+    margin-top: 10px;
 }
 
 .card-hover .hover-image .info .genres div {
@@ -266,3 +279,28 @@
     font-weight: 500;
 }
 
+@media (max-width: 1400px) {
+    .card-main .card-slide .slider .slider-row .card-wrapper {
+        min-width: 20%;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .card-main .card-slide .slider .slider-row .card-wrapper {
+        min-width: 25%;
+    }
+}
+
+@media (max-width: 800px) {
+    .card-main .card-slide .slider .slider-row .card-wrapper {
+        min-width:  33.333333%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .card-main .card-slide .slider .slider-row .card-wrapper {
+        min-width:  50%;
+    }
+}

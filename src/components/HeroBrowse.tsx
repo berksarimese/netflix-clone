@@ -24,7 +24,6 @@ const HeroBrowse = () => {
     useEffect(() => {
         const rndm = getRandomNumber();
         setRandomNumber(rndm);
-        console.log(randomNumber);
     }, []);
 
     const getRandomNumber = () => {

@@ -2,7 +2,6 @@ import NavbarBrowse from '../components/NavbarBrowse'
 import HeroBrowse from '../components/HeroBrowse'
 import TitleCard from '../components/TitleCard'
 import '../styles/browse.css'
-
 import { comedyMovies, trendMovies, trendShows } from '../store/actions/listActions';
 import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from '../store'
@@ -26,10 +25,10 @@ const Browse = () => {
 
 
   return (
-    <div style={{backgroundColor: '#141414'}}>
+    <div className='position-relative' style={{backgroundColor: '#141414'}}>
       <NavbarBrowse />
       <HeroBrowse />
-      <div>
+      <div className='position-relative'>
           <TitleCard title = 'Trending Movies' screenType = 'movie' selector = {trendMvData} dpatch = {trendMovies} />
           <TitleCard title = 'Comedy Movies' screenType = 'movie' selector = {comedyMvData} dpatch = {comedyMovies} />
           <TitleCard title = 'Trending TV Shows' screenType = 'tv' selector = {trendShowData} dpatch = {trendShows} />

@@ -1,0 +1,433 @@
+.modal-wrapper {
+    position: fixed;
+    display: none !important;
+    background-color: rgba(0, 0, 0, .75);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    color: white;
+    user-select: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    opacity: 0;
+    transition-duration: 0.9s;
+}
+
+.modal-wrapper .back-close {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.modal-active {
+    position: fixed;
+    display: flex !important;
+    opacity: 1;
+    transition-duration: 0.9s;
+}
+
+.modal-wrapper .modal-container {
+    position: relative;
+    left: auto;
+    transform-origin: 50% 12.5% 0px;
+    top: 2em;
+    width: 850px;
+    opacity: 1;
+    margin-bottom: 2em;
+    transform: none;
+    max-width: 850px;
+    z-index: 2;
+    background-color: #181818;}
+
+.modal-wrapper .modal-container .wrap-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-wrapper .modal-container img {
+    position: relative;
+    width: 100%;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper {
+    position: relative;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg,#181818,transparent 50%);
+    z-index: 1;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    transform: rotate(45deg);
+    background-color: rgba(0, 0, 0, .75);
+    line-height: 0.70;
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper {
+    bottom: 5%;
+    left: 3em;
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .title {
+    color: #fff;
+    font-size: 50px;
+    margin: 1vw 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
+    transition: color 1s cubic-bezier(.165,.84,.44,1);
+    font-weight: 900;
+    width: 150%;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer .icon {
+    font-size: 2.1vw;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer .play {
+    font-family: Poppins;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    color: black;
+    font-size: 1.1rem;
+    margin: 1vw 0;
+    font-weight: 600;
+    padding: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 2.2rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer .play:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer .button-item{
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+    border: 2px solid hsla(0,0%,100%,.5);
+    border-radius: 25px;
+    padding: 7px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 42px;
+    max-height: 42px;
+    outline: none;
+    background: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.modal-wrapper .modal-container .modal-image-wrapper .title-wrapper .button-layer .button-item:hover{
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.modal-wrapper .modal-container .info-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 3em;
+    background-color: #181818;
+}
+
+.modal-wrapper .modal-container .info-wrapper .details-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.modal-wrapper .modal-container .info-wrapper .details {
+    display: flex;
+    flex-direction: column;
+    max-width: 65%;
+    padding-bottom: 15px;
+}
+
+.modal-wrapper .modal-container .info-wrapper .details .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #bcbcbc;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.modal-wrapper .modal-container .info-wrapper .details .hd {
+    color: #bcbcbc;
+    border: 1px solid #bcbcbc;
+    border-radius: 2px;
+    padding: 1px 5px;
+    font-size: 9px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+.modal-wrapper .modal-container .info-wrapper .details .text {
+    color: white;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.modal-wrapper .modal-container .info-wrapper .cast .genre {
+    color: white;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: .5em .5em .5em 0;
+}
+
+.modal-wrapper .modal-container .info-wrapper .cast {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper {
+    padding: 0 3em;
+    background-color: #181818;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .text {
+    color: white;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head{
+    display: flex;
+    flex-direction: row;
+    height: 106px;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .left{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .right{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 35%;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 15px;
+    gap: 10px;
+    background-color: #242424;
+    margin-bottom: 16px;
+    margin-top: 32px; 
+    box-sizing: border-box;
+    border: 1px solid #494949;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .select-list{
+    position: absolute;
+    transform: translate(-13.5%,100%);
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    background-color: #242424;
+    border: 1px solid #494949;
+    border-radius: 5px;
+    width: 210px;
+    align-items: center;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .select-list .season-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .select-list .season-box:hover{
+    background-color: #424242;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .select-list .season-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 100%;
+    padding: 5px;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .season{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 20px;
+    user-select: none;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .icon{
+    transform: rotate(90deg);
+    font-size: 12px;
+    padding: 0px 10px;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .episode-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .episode-container .episode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    border-top: 1px solid #404040;
+    padding: 1.7em 1em;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .episode-container .episode .index{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    flex: 0 0 7%;
+    color: #d2d2d2;
+    font-weight: 600;
+}
+.modal-wrapper .modal-container .episodes-wrapper .episode-container .episode img{
+    aspect-ratio: 16/9;
+    max-width: 130px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .episode-container .episode .title{
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    font-family: Poppins;
+    padding-bottom: 10px;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .episode-container .episode .desc{
+    font-size: 14px;
+    color: #d2d2d2;
+    line-height: 1.2;
+    font-family: Poppins;
+}
+
+.modal-wrapper .modal-container .similar-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+    border-top: 1px solid #404040;
+    background-color: #181818;
+    padding-bottom: 20px;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 48px;
+    font-weight: 600;
+    font-family: Poppins;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1em;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container .similar-card {
+    height: 300px;
+    background-color: #2f2f2f;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container .similar-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container .similar-card .info-box {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container .similar-card .title {
+    font-size: 16px;
+    margin: 0;
+    padding: 0px 0px 5px 0px;
+}
+
+.modal-wrapper .modal-container .similar-wrapper .card-container .similar-card .desc {
+    font-size: 15px;
+    color: #d2d2d2;
+
+}
