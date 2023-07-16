@@ -78,7 +78,7 @@ const selectSeason = (seasonNumber:number) => {
                 <div className='info-wrapper'>
                     <div className="details-container">
                         <div className="details">
-                            <div className='date'>"{data?.showDate}" 8 Seasons <span className='hd'>HD</span></div>
+                            <div className='date'>"{data?.showDate}" - {seasonsData.data.length} Seasons <span className='hd'>HD</span></div>
                             <div className='text'>{data?.showDescription}</div>
                         </div>
                         <div className="cast">
@@ -99,7 +99,7 @@ const selectSeason = (seasonNumber:number) => {
                     <div className="head" style={{marginBottom:'8px'}}>
                         <div className="left">
                             <div className="text" style={{marginBottom: '16px', marginTop: '32px', fontSize: '24px'}}>Episodes</div>
-                            <div className="text">Season 1:</div>
+                            <div className="text">{seasonSelect}:</div>
                         </div>
                         <div className="right">
                             <div className="select" onClick={() => setSelectActive(!selectActive)}>

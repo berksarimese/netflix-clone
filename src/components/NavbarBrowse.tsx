@@ -109,9 +109,9 @@ const NavbarBrowse = () => {
                 <div className='position-relative'>
                  <TbPlayerPlayFilled className='position-absolute' style={{transform:'rotate(270deg)', fontSize:'14px', color:'white', top:'-8px'}} />
                 </div>
-                <a href="#/" className='navigation-item' style={{borderTop:'2px solid white'}}>Home</a>
-                <a href="#/" className='navigation-item'>TV Shows</a>
-                <a href="#/" className='navigation-item'>Movies</a>
+                <Link to='/browse/home' className='navigation-item' style={{borderTop:'2px solid white'}}>Home</Link>
+                <Link to='/browse/tvshows' className='navigation-item'>TV Shows</Link>
+                <Link to='/browse/movies' className='navigation-item'>Movies</Link>
                 <a href="#/" className='navigation-item'>New & Popular</a>
                 <a href="#/" className='navigation-item'>My List</a>
                 <a href="#/" className='navigation-item'>Browse by Languages</a>

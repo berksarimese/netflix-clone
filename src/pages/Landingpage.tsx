@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 const Landingpage = () => {
   return (
-    <div className='d-flex flex-column w-100' style={{background: '#000'}}>
+    <div className='d-flex flex-column w-100' style={{background: '#000', overflow:'hidden'}}>
         <NavbarLanding />
         <HeroLanding />
         <CardsLanding />

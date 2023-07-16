@@ -22,7 +22,7 @@ const Browse = () => {
 
 
   return (
-    <div className='position-relative' style={{backgroundColor: '#141414'}}>
+    <div className='position-relative' style={{backgroundColor: '#141414', overflow:'hidden'}}>
       <NavbarBrowse />
       <Routes>
         <Route path='/home' Component={HomeSliders} />
