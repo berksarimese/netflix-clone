@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import  { useState, useEffect, useRef } from 'react'
 import '../styles/navbar.css';
 import '../styles/fonts.css';
 import logo from '../media/logo.png'
@@ -90,9 +90,9 @@ const NavbarBrowse = () => {
             <div className='d-flex flex-row align-items-center'> 
               <Link to='/' className='d-flex' style={{alignItems:'center'}}><img src={logo} alt="logo" className='logo' /></Link>
               <div className='navbar-navigation'>
-                <a href="#/" className='navigation-item'>Home</a>
-                <a href="#/" className='navigation-item'>TV Shows</a>
-                <a href="#/" className='navigation-item'>Movies</a>
+                <Link to='/browse/home' className='navigation-item'>Home</Link>
+                <Link to='/browse/tvshows' className='navigation-item'>TV Shows</Link>
+                <Link to='/browse/movies' className='navigation-item'>Movies</Link>
                 <a href="#/" className='navigation-item'>New & Popular</a>
                 <a href="#/" className='navigation-item'>My List</a>
                 <a href="#/" className='navigation-item'>Browse by Languages</a>

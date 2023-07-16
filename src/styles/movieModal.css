@@ -285,7 +285,7 @@
 .modal-wrapper .modal-container .episodes-wrapper .head .select .select-list{
     position: absolute;
     transform: translate(-13.5%,100%);
-    display: flex;
+    display: none;
     flex-direction: column;
     bottom: 0;
     background-color: #242424;
@@ -293,6 +293,10 @@
     border-radius: 5px;
     width: 210px;
     align-items: center;
+}
+
+.modal-wrapper .modal-container .episodes-wrapper .head .select .select-active{
+    display: flex;
 }
 
 .modal-wrapper .modal-container .episodes-wrapper .head .select .select-list .season-box{

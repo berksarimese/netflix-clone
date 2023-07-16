@@ -12,7 +12,6 @@ export const showInfo = (id:number) => async(dispatch: ShowDiscpatch) => {
                 episodes: movie.episode_count,
                 season: movie.season_number
             }));
-            
         dispatch({type:'SHOW_SUCCESS', payload: updatedData});
     }
     catch{

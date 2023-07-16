@@ -35,7 +35,6 @@ const ReadyToWatch = () => {
             } else { setEmailEmpty(false) }
      }
 
-     console.log(emailEmpty);
 
 
   return (

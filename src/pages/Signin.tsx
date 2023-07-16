@@ -91,7 +91,7 @@ const Login = () => {
                             <div className='input-text' style={passwordFocus.isFocussed ? labelStyle.labelMove : {}}>Password</div>
                         </div>
                         <div className='email-error' style={passwordEmpty ? labelStyle.emailError : {}}>Your password must contain between 4 and 60 characters.</div>
-                        <Link to='/browse'><button>Sign In</button></Link> 
+                        <Link to='/browse/home'><button>Sign In</button></Link> 
                         <div className='check-box'>
                         <label className="cbox-contain">
                             <span>Remember Me</span>

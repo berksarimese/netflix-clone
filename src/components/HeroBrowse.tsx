@@ -4,6 +4,8 @@ import '../styles/fonts.css';
 import { TbPlayerPlayFilled, TbInfoCircle } from "react-icons/tb";
 import { useSelector } from 'react-redux';
 import { AppState } from '../store';
+import MovieModal from './MovieModal';
+import { modalProp } from '../types/propTypes';
 
 
 type List = {
@@ -18,6 +20,32 @@ type List = {
 }
 
 const HeroBrowse = () => {
+
+   
+      
+//MODAL
+const [modalData, setModalData] = useState<modalProp>({
+    mediaType: '',
+    showId: 0,
+    showImage: '',
+    showTitle: '',
+    showDescription: '',
+    showDate:'',
+    genre:[],
+    active: false
+  });
+
+const modalStatus = (id:number,image:string,title:string,description:string,date:string,genre:number[]) => {
+    setModalData({
+      mediaType:'movie', 
+      showId: id, 
+      showImage: image, 
+      showTitle:title, 
+      showDescription: description, 
+      showDate: date, 
+      genre: genre, 
+      active: true});
+  }
     
     //RANDOM NUMBER
     const [randomNumber, setRandomNumber] = useState<number>(0);
@@ -62,7 +90,7 @@ const HeroBrowse = () => {
                         </div>
                         <div className="button-layer">
                             <button><TbPlayerPlayFilled className='icon' /> <div>Play</div> </button>
-                            <button className='button-gray'><TbInfoCircle className='icon' /> <div>More Info</div> </button>
+                            <span onClick={() => (movieList.length > 0 ? modalStatus(movieList[randomNumber].id, movieList[randomNumber].image, movieList[randomNumber].title, movieList[randomNumber].description, movieList[randomNumber].date, movieList[randomNumber].genre) : {})} ><button className='button-gray'><TbInfoCircle className='icon' /> <div>More Info</div> </button></span>
                         </div>
                     </div>
                 </div>
@@ -74,6 +102,7 @@ const HeroBrowse = () => {
             </div>
             </div>
         </div>
+        <MovieModal modalData = {modalData}/>
     </>
   )
 }

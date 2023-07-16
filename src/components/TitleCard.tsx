@@ -29,11 +29,12 @@ const TitleCard:React.FC<PropTypes> = ({title, screenType, selector, dpatch}) =>
   const [slidePos, setSlidePos] = useState<number>(0);
   const [movieList, setMovieList] = useState<List[]>([]);
   const [cardWidth, setCardWidth] = useState<any>(0);
-  const [cardCount, setCardCount] = useState<number>(0);
+  // const [cardCount, setCardCount] = useState<number>(0);
   const [slidePage, setSlidePage] = useState<number>(1);
   const [cardLeft, setCardLeft] = useState<boolean>(false);
   const [cardRight, setCardRight] = useState<boolean>(false);
   const [elementIndex, setElementIndex] = useState<number>();
+  const [slideCount, setSlideCount] = useState<number>(1);
   const [modalData, setModalData] = useState<modalProp>({
     mediaType: screenType,
     showId: 0,
@@ -48,12 +49,11 @@ const TitleCard:React.FC<PropTypes> = ({title, screenType, selector, dpatch}) =>
   //REFS
   const slideElement = useRef<HTMLDivElement>(null);
   const titleCard = useRef<any[]>([]);
-  const hoverCard = useRef<HTMLDivElement>(null);
   
   //MOVIE OR SHOW DATA
   useEffect(() => {
     dispatch(dpatch() as any);
-  }, [])
+  }, [dispatch, dpatch])
 
   useEffect(() => {
     setMovieList(selector.data);
@@ -83,31 +83,45 @@ const TitleCard:React.FC<PropTypes> = ({title, screenType, selector, dpatch}) =>
     setSlidePage(1);
 
     //CARD COUNT ON LIST
-    windowWidth > 1400 ? setCardCount(6) : 
-    windowWidth > 1100 ? setCardCount(5) : 
-    windowWidth > 800 ? setCardCount(4) :
-    windowWidth > 500 ? setCardCount(3) : setCardCount(2)
+    // windowWidth > 1400 ? setCardCount(6) : 
+    // windowWidth > 1100 ? setCardCount(5) : 
+    // windowWidth > 800 ? setCardCount(4) :
+    // windowWidth > 500 ? setCardCount(3) : setCardCount(2)
 
   }, [windowWidth])
 
   //CARD WIDTH
-  useEffect(() => {
+  const getCardWidth = () => {
     setCardWidth(titleCard.current[0]?.offsetWidth);
-  });
+  }
 
   
 
   //BUTTONS
   const slideLeft = () => {
-    setSlidePos(slidePos - slideWidth);
-    setSlidePage(slidePage + 1);
+    const lastPage = (slideWidth * (slideCount - 1)) * -1;
+    if(slidePos > lastPage) {
+      setSlidePage(slidePage + 1);
+      setSlidePos(slidePos - slideWidth);
+    } else {
+      setSlidePage(1);
+      setSlidePos(slidePos + slideWidth * (slideCount - 1));
+    }
   }
 
   const slideRight = () => {
     if(slidePos !== 0) {
-    setSlidePos(slidePos + slideWidth);
     setSlidePage(slidePage - 1);
+    setSlidePos(slidePos + slideWidth);
+    } else {
+      setSlidePage(slideCount);
+      setSlidePos(slidePos - slideWidth * (slideCount - 1));
     }
+  }
+
+  const countSlide = () => {
+    const count = Math.ceil((cardWidth * movieList.length) / slideWidth);
+    setSlideCount(count);
   }
 
   //CARD HOVER
@@ -140,13 +154,12 @@ const TitleCard:React.FC<PropTypes> = ({title, screenType, selector, dpatch}) =>
 const cardLoc = (index:number) => {
   if (titleCard.current[index]) {
     const offsetLeft = titleCard.current[index].offsetLeft;
-    const slideCount = Math.round((cardWidth * movieList.length) / slideWidth);
-    
-    if(offsetLeft > ((slideWidth * slidePage) - slideWidth) - 50 && offsetLeft < ((slideWidth * slidePage) - slideWidth) + 50) {
+
+    if(offsetLeft > ((slideWidth * slidePage) - slideWidth) - 75 && offsetLeft < ((slideWidth * slidePage) - slideWidth) + 75) {
       setCardLeft(true);
     }
 
-    if(offsetLeft > ((slideWidth * slidePage) - cardWidth) - 50 && offsetLeft < ((slideWidth * slidePage) - cardWidth) + 50) {
+    if(offsetLeft > ((slideWidth * slidePage) - cardWidth) - 75 && offsetLeft < ((slideWidth * slidePage) - cardWidth) + 75) {
       setCardRight(true);
     }
   }
@@ -176,16 +189,16 @@ const modalStatus = (id:number,image:string,title:string,description:string,date
       </div>
       <div className="card-slide">
         <div className="slider">
-          <span className='previous-button' onClick={() => slideRight()} ><RiArrowLeftSLine /></span>
+          <span className='previous-button' onClick={() => slideRight()} onMouseOver={() => countSlide()}><RiArrowLeftSLine /></span>
           <div className="slider-row" style={{left:`${slidePos}px`}}  ref={slideElement}>
             {
               (movieList.length > 0 ?
               movieList.map((movie, index:number) => (
                 <div className='card-wrapper' ref={(el) => (titleCard.current[index] = el)} key={movie.id} >
                   <img src={`https://image.tmdb.org/t/p/w1280${movie.image}`} style={{opacity:'1'}} alt="Movie Banner"/>
-                  <div className={`card-hover ${movie.hover ? 'card-true' : ''}`} onMouseOver={() => (onCard(movie.id),  cardLoc(index))} onMouseLeave={() => offCard(movie.id)}>
+                  <div className={`card-hover ${movie.hover ? 'card-true' : ''}`} onMouseOver={() => {onCard(movie.id); cardLoc(index);}} onMouseLeave={() => offCard(movie.id)}>
                     <div key={index} className={`hover-image ${movie.hover ? 'hover-true' : ''}  ${index === elementIndex && cardLeft ? 'card-left-true' : ''} ${index === elementIndex && cardRight ? 'card-right-true' : ''} `} onMouseOver={() => setElementIndex(index)}>
-                      <img src={`https://image.tmdb.org/t/p/w1280${movie.image}`} alt="Hover Banner"/>
+                      <img src={`https://image.tmdb.org/t/p/w1280${movie.image}`} alt="Hover Banner" onMouseOver={() => getCardWidth()} />
                       <div className ={`info ${movie.hover ? 'info-true' : ''}`}>
                         <div className="button-box justify-content-between">
                           <div className='d-flex flex-row' style={{gap:'0.6vw'}}>
@@ -224,7 +237,7 @@ const modalStatus = (id:number,image:string,title:string,description:string,date
               : 'test')
             }
           </div>
-          <span className='next-button' onClick={() => slideLeft()} ><RiArrowRightSLine /></span>
+          <span className='next-button' onClick={() => slideLeft()} onMouseOver={() => countSlide()}><RiArrowRightSLine /></span>
         </div>
       </div>
     </div>

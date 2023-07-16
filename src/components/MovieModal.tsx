@@ -3,7 +3,7 @@ import '../styles/movieModal.css'
 import '../styles/fonts.css'
 import { TbPlayerPlayFilled, TbCheck, TbThumbUp, TbPlus } from "react-icons/tb";
 
-import cobrahero from '../media/cobrahero.jpg'
+import imageapi from '../media/imageapi.jpg'
 import { modalProp } from '../types/propTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../store';
@@ -21,6 +21,7 @@ const [data, setData] = useState<modalProp>();
 const [genreData, setGenreData] = useState<any>();
 const similar = useSelector((state: AppState) => state.similar);
 const [seasonSelect, setSeasonSelect] = useState<string>('Season 1');
+const [selectActive, setSelectActive] = useState<boolean>(false);
 
 const genreTvData = useSelector((state: AppState) => state.genreTv);
 const genreMvData = useSelector((state: AppState) => state.genreMv);
@@ -35,7 +36,8 @@ useEffect (() => {
 
     //GENRE
     modalData.mediaType === 'tv' ? setGenreData(genreTvData) : setGenreData(genreMvData);
-}, [modalData])
+    
+}, [modalData, genreMvData, genreTvData])
 
 
 //MODAL CLOSE
@@ -54,6 +56,7 @@ const selectSeason = (seasonNumber:number) => {
     dispatch(episodeList(data?.showId, updatedSeason) as any);
 }
 
+
   return (
     <div ref={fixedDiv} className={`modal-wrapper ${data?.active ? 'modal-active' : ''}`}>
         <div className='modal-container'>
@@ -69,7 +72,7 @@ const selectSeason = (seasonNumber:number) => {
                         </div>
                     </div>
                 <div className="shadow"></div>
-                <div className="close"><TbPlus/></div>
+                <div className="close" onClick={() => modalClose()}><TbPlus/></div>
                 </div>
 
                 <div className='info-wrapper'>
@@ -79,7 +82,6 @@ const selectSeason = (seasonNumber:number) => {
                             <div className='text'>{data?.showDescription}</div>
                         </div>
                         <div className="cast">
-                            <div className="genre"> <span style={{ color:'#777'}}>Cast:</span> Andy Samberg, Andre Baraugher, Stephanie Betriz </div>
                             <div className="genre"> <span style={{ color:'#777'}}>Genres:</span> 
                             {
                              data?.genre.map((genre:number, i:number) => (
@@ -100,10 +102,10 @@ const selectSeason = (seasonNumber:number) => {
                             <div className="text">Season 1:</div>
                         </div>
                         <div className="right">
-                            <div className="select">
+                            <div className="select" onClick={() => setSelectActive(!selectActive)}>
                                 <div className="season">{seasonSelect}</div>
                                 <div className="icon"><TbPlayerPlayFilled /></div>
-                                <div className="select-list">
+                                <div className={`select-list ${selectActive ? 'select-active' : ''}`} onClick={() => setSelectActive(!selectActive)}> 
                                     {
                                         seasonsData.data.map((season:any, i:number) => (
                                             <div key={i} className='season-box' onClick={() => selectSeason(i)}>
@@ -121,7 +123,7 @@ const selectSeason = (seasonNumber:number) => {
                         episodesData?.data.map((episode:any, i:number) => (
                         <div className="episode" key={i}>
                             <div className="index">{episode.episode_number}</div>
-                            <img src={episode.still_path ? `https://image.tmdb.org/t/p/w1280${episode.still_path}` : cobrahero} alt="episodeimage" />
+                            <img src={episode.still_path ? `https://image.tmdb.org/t/p/w1280${episode.still_path}` : imageapi} alt="episodeimage" />
                             <div className="episode-info w-100">
                                 <div className="title">{episode.name}</div>
                                 <div className="desc">{episode.overview}</div>
@@ -136,13 +138,12 @@ const selectSeason = (seasonNumber:number) => {
                     <div className="title">More Like This</div>
                     <div className="card-container">
                         {
-                            similar.data.map((data:any, i:number) => (
+                            similar.data.map((simi:any, i:number) => (
                             <div className="similar-card" key={i}>
-                                <img src={data.backdrop_path ? `https://image.tmdb.org/t/p/w1280${data.backdrop_path}` : cobrahero} alt="similarimage" />
-                                
+                                <img src={simi.backdrop_path ? `https://image.tmdb.org/t/p/w1280${simi.backdrop_path}` : imageapi} alt="similarimage" />
                                 <div className="info-box">
-                                    <div className="title">{data.name}</div>
-                                    <div className="desc">{data.overview}</div>
+                                    <div className="title">{data?.mediaType === 'tv' ? simi.name : simi.title}</div>
+                                    <div className="desc">{simi.overview}</div>
                                 </div>
                             </div>
                             ))

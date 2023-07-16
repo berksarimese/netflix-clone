@@ -165,6 +165,7 @@ body {
 }
 
 .billboard .hero-info .button-layer .button-gray {
+    display: flex;
     background-color: rgba(81, 83, 87, 1);
     color: white;
 }
