@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/fonts.css'
 import '../styles/footer.css'
 import Language from './Language'
 

@@ -1,6 +1,5 @@
 import { useEffect,useState } from 'react'
 import '../styles/browsehero.css';
-import '../styles/fonts.css';
 import { TbPlayerPlayFilled, TbInfoCircle } from "react-icons/tb";
 import { useSelector } from 'react-redux';
 import { AppState } from '../store';

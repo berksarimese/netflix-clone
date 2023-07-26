@@ -1,6 +1,5 @@
 import  { useState, useEffect, useRef } from 'react'
 import '../styles/navbar.css';
-import '../styles/fonts.css';
 import logo from '../media/logo.png'
 import profileimage from '../media/profileimage.png'
 import notifyimage from '../media/notifyimg.png'

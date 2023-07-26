@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { VscChevronRight, VscError } from "react-icons/vsc";
 import '../styles/readytowatch.css'
-import '../styles/fonts.css'
 
 
 type heroEmail = {

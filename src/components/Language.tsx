@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/fonts.css'
 import { VscGlobe, VscTriangleDown } from "react-icons/vsc";
 import '../styles/lanselect.css'
 

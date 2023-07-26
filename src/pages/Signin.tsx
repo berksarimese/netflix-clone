@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import loginimage from '../media/heroimage.jpg'
 import logo from '../media/logo.png'
 import '../styles/signin.css'
-import '../styles/fonts.css'
 import Language from '../components/Language'
 import { Link } from 'react-router-dom'
 

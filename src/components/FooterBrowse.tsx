@@ -1,5 +1,4 @@
 import '../styles/footerbrowse.css'
-import '../styles/fonts.css'
 import { TbBrandInstagram, TbBrandFacebook, TbBrandTwitter, TbBrandYoutube} from "react-icons/tb";
 
 const FooterBrowse = () => {

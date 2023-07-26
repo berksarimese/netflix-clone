@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import '../styles/movieModal.css'
-import '../styles/fonts.css'
 import { TbPlayerPlayFilled, TbCheck, TbThumbUp, TbPlus } from "react-icons/tb";
 
 import imageapi from '../media/imageapi.jpg'

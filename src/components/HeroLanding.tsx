@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/landingstyles.css'
-import '../styles/fonts.css'
 import heroimage from '../media/heroimage.jpg'
 import ReadyToWatch from './ReadyToWatch'
 

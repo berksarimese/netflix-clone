@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
 import '../styles/titlecard.css'
-import '../styles/fonts.css'
 import { RiArrowLeftSLine ,RiArrowRightSLine } from "react-icons/ri";
 import { TbChevronDown, TbThumbUp , TbPlayerPlayFilled , TbPlus } from "react-icons/tb";
 import { useDispatch, useSelector } from 'react-redux';

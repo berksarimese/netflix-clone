@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/landingstyles.css'
-import '../styles/fonts.css'
 import tvpng from '../media/tv.png'
 import devicespng from '../media/devices.png'
 import stposter from '../media/stpostersmall.png'

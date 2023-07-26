@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../styles/fonts.css'
 import '../styles/faqstyles.css'
 import { VscAdd } from "react-icons/vsc";
 import ReadyToWatch from './ReadyToWatch';
