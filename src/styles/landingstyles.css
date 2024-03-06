@@ -49,7 +49,7 @@ a {
     display: flex;
     min-height: 43.75rem;
     background-position: center;
-    bacground-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     padding: 9.875rem 0 4rem;
@@ -131,6 +131,7 @@ a {
 
 .card {
     display: flex;
+    min-height: 43.75rem;
     height: 553px;
     overflow: hidden;
     padding: 4.5rem 0;
